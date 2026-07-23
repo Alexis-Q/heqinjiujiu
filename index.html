@@ -350,20 +350,12 @@
     padding: 8rem 2rem;
   }
   .steps {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     position: relative;
-  }
-  .steps::before {
-    content: '';
-    position: absolute;
-    top: 28px; left: 10%; right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
-    opacity: 0.3;
   }
   .step {
     text-align: center;
@@ -484,8 +476,7 @@
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    .steps { grid-template-columns: 1fr; }
-    .steps::before { display: none; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
     .hero-stats { gap: 1.5rem; }
   }
 
@@ -594,17 +585,52 @@
     <div class="step reveal">
       <div class="step-num">🎤</div>
       <h3>蒋敦豪</h3>
-      <p>大哥担当，乐队主唱出身。《中国新歌声》全国总冠军，用温柔的嗓音温暖每一个禾伙人。</p>
+      <p>大哥·乐队主唱，《中国新歌声》全国总冠军，用温柔嗓音温暖禾伙人。</p>
     </div>
     <div class="step reveal">
-      <div class="step-num">🌾</div>
+      <div class="step-num">💪</div>
       <h3>鹭卓</h3>
-      <p>实力担当，从偶像练习生到田间少年。踏实肯干、低调内敛，用行动诠释「做大做强」的精神。</p>
+      <p>二哥·实力担当，偶像练习生出身，用行动诠释「做大做强」。</p>
     </div>
     <div class="step reveal">
       <div class="step-num">🎬</div>
       <h3>李耕耘</h3>
-      <p>演员出身，北电科班。阳光帅气的重庆少年，用真诚的演技和灿烂的笑容征服观众。</p>
+      <p>三哥·北电科班，阳光帅气的重庆少年，笑容灿烂真诚动人。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">🎭</div>
+      <h3>赵一博</h3>
+      <p>上戏表演系，演技与颜值并存，舞台上的闪耀存在。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">💃</div>
+      <h3>卓沅</h3>
+      <p>舞蹈担当，用肢体语言表达热爱，每一个舞台都全力以赴。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">🎪</div>
+      <h3>赵小童</h3>
+      <p>中戏科班出身，细腻演技与幽默感兼具的宝藏少年。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">🎵</div>
+      <h3>何浩楠</h3>
+      <p>实力 vocal，清澈嗓音穿透人心，用音乐传递力量。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">🎙️</div>
+      <h3>陈少熙</h3>
+      <p>好声音战将，独特音色辨识度拉满，歌声里藏着故事。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">🔥</div>
+      <h3>王一珩</h3>
+      <p>rapper 担当，节奏感爆棚，用说唱点燃全场气氛。</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">🌟</div>
+      <h3>李昊</h3>
+      <p>全能偶像，唱跳俱佳，舞台上的光芒少年永不设限。</p>
     </div>
   </div>
 </section>
