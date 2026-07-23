@@ -16,15 +16,15 @@
     --bg-card: #111122;
     --text-primary: #e8e8f0;
     --text-secondary: #9898b0;
-    --accent-cyan: #00e5ff;
-    --accent-purple: #a855f7;
-    --accent-pink: #ec4899;
-    --gradient-1: linear-gradient(135deg, #00e5ff, #a855f7);
-    --gradient-2: linear-gradient(135deg, #a855f7, #ec4899);
-    --gradient-3: linear-gradient(135deg, #00e5ff, #06b6d4);
+    --accent-cyan: #4ade80;
+    --accent-purple: #eab308;
+    --accent-pink: #84cc16;
+    --gradient-1: linear-gradient(135deg, #4ade80, #eab308);
+    --gradient-2: linear-gradient(135deg, #eab308, #84cc16);
+    --gradient-3: linear-gradient(135deg, #4ade80, #22c55e);
     --border: rgba(255,255,255,0.06);
-    --glow-cyan: 0 0 80px rgba(0,229,255,0.15);
-    --glow-purple: 0 0 80px rgba(168,85,247,0.15);
+    --glow-cyan: 0 0 80px rgba(74,222,128,0.15);
+    --glow-purple: 0 0 80px rgba(234,179,8,0.15);
   }
 
   html { scroll-behavior: smooth; }
@@ -115,8 +115,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0,229,255,0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 50% at 80% 70%, rgba(168,85,247,0.05) 0%, transparent 70%);
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(74,222,128,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 80% 70%, rgba(234,179,8,0.05) 0%, transparent 70%);
   }
   .hero-bg-grid {
     position: absolute;
@@ -715,7 +715,7 @@
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,229,255,${this.opacity})`;
+      ctx.fillStyle = `rgba(74,222,128,${this.opacity})`;
       ctx.fill();
     }
   }
@@ -737,7 +737,7 @@
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,229,255,${0.1 * (1 - dist / 120)})`;
+          ctx.strokeStyle = `rgba(74,222,128,${0.1 * (1 - dist / 120)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
