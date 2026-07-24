@@ -345,45 +345,88 @@
     line-height: 1.7;
   }
 
-  /* ===== HOW IT WORKS ===== */
-  .how {
+  /* ===== MEMBERS GALLERY ===== */
+  .members {
     padding: 8rem 2rem;
   }
-  .steps {
+  .members-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
-    position: relative;
   }
-  .step {
+  .member-card {
     text-align: center;
     position: relative;
-    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
   }
-  .step-num {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--bg-primary);
-    border: 2px solid var(--accent-cyan);
+  .member-card:hover {
+    transform: translateY(-10px);
+  }
+  .member-card:hover .member-avatar {
+    box-shadow: 0 0 40px rgba(234,179,8,0.4), 0 0 80px rgba(74,222,128,0.2);
+    border-color: #eab308;
+  }
+  .member-card:hover .member-name {
+    color: #eab308;
+  }
+  .member-avatar {
+    width: 160px;
+    height: 200px;
+    margin: 0 auto 1.2rem;
+    border-radius: 16px;
+    border: 2px solid rgba(74,222,128,0.3);
+    background: linear-gradient(135deg, #1a2e1a, #1a1a0a);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 3rem;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .member-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  }
+  .member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .member-avatar .avatar-placeholder {
+    font-size: 4rem;
+    opacity: 0.6;
+  }
+  .member-info {
+    padding: 0 0.5rem;
+  }
+  .member-name {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--accent-cyan);
-    margin: 0 auto 1.5rem;
-    box-shadow: var(--glow-cyan);
+    margin-bottom: 0.3rem;
+    transition: color 0.3s;
+    letter-spacing: 0.02em;
   }
-  .step h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.6rem;
+  .member-role {
+    font-size: 0.8rem;
+    color: #4ade80;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
   }
-  .step p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+  .member-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
 
   /* ===== CTA ===== */
   .cta {
@@ -476,7 +519,7 @@
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    .steps { grid-template-columns: repeat(2, 1fr); }
+    .members-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-stats { gap: 1.5rem; }
   }
 
@@ -577,60 +620,110 @@
   </div>
 </section>
 
-<section class="how" id="members">
-  <div class="section-label reveal">少年风采</div>
+<section class="members" id="members">
+  <div class="section-label reveal">角色选择</div>
   <h2 class="section-title reveal">十个勤天 · 十位少年</h2>
-  <p class="section-subtitle reveal">从后陡门到聚光灯下，十位少年用汗水与真诚，书写属于他们的传奇。</p>
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-num">🎤</div>
-      <h3>蒋敦豪</h3>
-      <p>大哥·乐队主唱，《中国新歌声》全国总冠军，用温柔嗓音温暖禾伙人。</p>
+  <p class="section-subtitle reveal">选择你的本命少年，查看专属资料与最新动态。</p>
+  <div class="members-grid">
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🎤</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Leader</div>
+        <h3 class="member-name">蒋敦豪</h3>
+        <p class="member-desc">大哥·乐队主唱，《中国新歌声》总冠军</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">💪</div>
-      <h3>鹭卓</h3>
-      <p>二哥·实力担当，偶像练习生出身，用行动诠释「做大做强」。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">💪</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Muscle</div>
+        <h3 class="member-name">鹭卓</h3>
+        <p class="member-desc">二哥·实力担当，用行动诠释「做大做强」</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🎬</div>
-      <h3>李耕耘</h3>
-      <p>三哥·北电科班，阳光帅气的重庆少年，笑容灿烂真诚动人。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🎬</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Actor</div>
+        <h3 class="member-name">李耕耘</h3>
+        <p class="member-desc">三哥·北电科班，阳光重庆少年</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🌟</div>
-      <h3>李昊</h3>
-      <p>全能偶像，唱跳俱佳，舞台上的光芒少年永不设限。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🌟</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">All-rounder</div>
+        <h3 class="member-name">李昊</h3>
+        <p class="member-desc">全能偶像，唱跳俱佳光芒少年</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🎭</div>
-      <h3>赵一博</h3>
-      <p>上戏表演系，演技与颜值并存，舞台上的闪耀存在。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🎭</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Performer</div>
+        <h3 class="member-name">赵一博</h3>
+        <p class="member-desc">上戏表演系，演技颜值并存</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">💃</div>
-      <h3>卓沅</h3>
-      <p>舞蹈担当，用肢体语言表达热爱，每一个舞台都全力以赴。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">💃</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Dancer</div>
+        <h3 class="member-name">卓沅</h3>
+        <p class="member-desc">舞蹈担当，用肢体语言表达热爱</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🎪</div>
-      <h3>赵小童</h3>
-      <p>中戏科班出身，细腻演技与幽默感兼具的宝藏少年。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🎪</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Actor</div>
+        <h3 class="member-name">赵小童</h3>
+        <p class="member-desc">中戏科班，细腻演技宝藏少年</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🎵</div>
-      <h3>何浩楠</h3>
-      <p>实力 vocal，清澈嗓音穿透人心，用音乐传递力量。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🎵</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Vocal</div>
+        <h3 class="member-name">何浩楠</h3>
+        <p class="member-desc">实力 vocal，清澈嗓音穿透人心</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🎙️</div>
-      <h3>陈少熙</h3>
-      <p>好声音战将，独特音色辨识度拉满，歌声里藏着故事。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🎙️</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Vocal</div>
+        <h3 class="member-name">陈少熙</h3>
+        <p class="member-desc">好声音战将，独特音色辨识度拉满</p>
+      </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">🔥</div>
-      <h3>王一珩</h3>
-      <p>rapper 担当，节奏感爆棚，用说唱点燃全场气氛。</p>
+    <div class="member-card reveal">
+      <div class="member-avatar">
+        <span class="avatar-placeholder">🔥</span>
+      </div>
+      <div class="member-info">
+        <div class="member-role">Rapper</div>
+        <h3 class="member-name">王一珩</h3>
+        <p class="member-desc">rapper 担当，用说唱点燃全场</p>
+      </div>
     </div>
   </div>
 </section>
